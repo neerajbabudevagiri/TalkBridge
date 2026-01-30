@@ -27,29 +27,32 @@ Microphone Audio
 → Logging & Dataset Storage
 
 
+```text
 Repository Structure
 
-├── stt_stream_tiny_auto.py # Real-time STT using Whisper-tiny
-├── stt_stream_small_auto.py # Real-time STT using Whisper-small
-├── stt_stream_local.py # Offline STT using local Whisper model
-├── fast_stream_stt.py # Faster-Whisper continuous streaming
-├── speech_translate1.py # STT → Translation → Hindi TTS pipeline
+.
+├── stt_stream_tiny_auto.py        # Real-time STT using Whisper-tiny (auto-download)
+├── stt_stream_small_auto.py       # Real-time STT using Whisper-small
+├── stt_stream_local.py            # Offline STT using local Whisper model
+├── fast_stream_stt.py             # Faster-Whisper continuous streaming
+├── speech_translate1.py           # Speech → Translation → Hindi TTS pipeline
 │
-├── merge_all.py # Dataset cleaning, merging, splitting (EN–HI, EN–TE)
-├── train_tokenizer.py # SentencePiece tokenizer training (BPE)
-├── Training.ipynb # Training & experimentation notebook
+├── merge_all.py                   # Dataset cleaning, merging, splitting (EN–HI, EN–TE)
+├── train_tokenizer.py             # SentencePiece tokenizer training (BPE)
+├── Training.ipynb                 # Training & experimentation notebook
 │
 ├── tokenizer/
-│ ├── spiece.model # Trained SentencePiece model
-│ ├── spiece.vocab # Vocabulary file
-│ └── special_tokens.txt # Language & special tokens
+│   ├── spiece.model               # Trained SentencePiece model
+│   ├── spiece.vocab               # SentencePiece vocabulary
+│   └── special_tokens.txt         # Language & special tokens
 │
 ├── outputs/
-│ ├── speech_translations.txt # Logged speech and translations
-│ ├── hindi_output.mp3 # Sample Hindi TTS output
-│ └── telugu_output.mp3 # Sample Telugu TTS output
+│   ├── speech_translations.txt    # Logged speech and translations
+│   ├── hindi_output.mp3           # Sample Hindi TTS output
+│   └── telugu_output.mp3          # Sample Telugu TTS output
 │
 └── README.md
+```
 
 
 Technologies Used
