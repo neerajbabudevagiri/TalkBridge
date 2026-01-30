@@ -1,11 +1,16 @@
+```text
 # Real-Time Speech-to-Text & Multilingual Translation System
 
-A real-time, low-latency speech processing system that captures live microphone audio, converts it into English text using Whisper-based models, translates it into Hindi and Telugu, and optionally generates Text-to-Speech (TTS) audio output.
+A real-time, low-latency speech processing system that captures live microphone audio,
+converts it into English text using Whisper-based models, translates it into Hindi and Telugu,
+and optionally generates Text-to-Speech (TTS) audio output.
 
-This project demonstrates end-to-end integration of speech recognition, multilingual translation, tokenizer training, dataset preparation, and real-time streaming inference.
+This project demonstrates end-to-end integration of speech recognition, multilingual
+translation, tokenizer training, dataset preparation, and real-time streaming inference.
 
+--------------------------------------------------------------------
 
-Key Features
+FEATURES
 
 - Real-time microphone audio streaming
 - Speech-to-Text (STT) using Whisper / Faster-Whisper
@@ -17,18 +22,20 @@ Key Features
 - Dataset preprocessing and multilingual tokenizer training
 - CPU and GPU compatible execution
 
-System Workflow
+--------------------------------------------------------------------
 
-Microphone Audio  
-→ Audio Chunking  
-→ Speech-to-Text (Whisper / Faster-Whisper)  
-→ Translation (EN → HI / TE)  
-→ Optional Text-to-Speech  
+SYSTEM WORKFLOW
+
+Microphone Audio
+→ Audio Chunking
+→ Speech-to-Text (Whisper / Faster-Whisper)
+→ Translation (EN → HI / TE)
+→ Optional Text-to-Speech
 → Logging & Dataset Storage
 
+--------------------------------------------------------------------
 
-```text
-Repository Structure
+REPOSITORY STRUCTURE
 
 .
 ├── stt_stream_tiny_auto.py        # Real-time STT using Whisper-tiny (auto-download)
@@ -52,10 +59,11 @@ Repository Structure
 │   └── telugu_output.mp3          # Sample Telugu TTS output
 │
 └── README.md
-```
 
+--------------------------------------------------------------------
 
-Technologies Used
+TECHNOLOGIES USED
+
 - Python
 - OpenAI Whisper / Faster-Whisper
 - SoundDevice (real-time audio capture)
@@ -64,85 +72,85 @@ Technologies Used
 - gTTS / Piper TTS
 - NumPy
 
+--------------------------------------------------------------------
 
-
-
- Installation
+INSTALLATION
 
 1. Create a virtual environment (recommended)
 
-```bash
-python -m venv venv
-source venv/bin/activate      # Linux / macOS
-venv\Scripts\activate         # Windows
+   python -m venv venv
+   source venv/bin/activate        # Linux / macOS
+   venv\Scripts\activate           # Windows
 
 2. Install required packages
-pip install numpy sounddevice faster-whisper transformers sentencepiece gtts huggingface_hub tqdm
+
+   pip install numpy sounddevice faster-whisper transformers sentencepiece gtts huggingface_hub tqdm
+
 Make sure your system microphone is enabled and accessible.
 
+--------------------------------------------------------------------
 
+HOW TO RUN
 
-How to Run
 Real-Time Speech-to-Text (Fastest – Tiny Model)
-python stt_stream_tiny_auto.py
+   python stt_stream_tiny_auto.py
 
 Real-Time Speech-to-Text (Small / Medium Models)
-python stt_stream_small_auto.py
-python fast_stream_stt.py
+   python stt_stream_small_auto.py
+   python fast_stream_stt.py
 
 Offline Whisper (Local Model Execution)
-python stt_stream_local.py
+   python stt_stream_local.py
 
 Speech → Translation → Hindi TTS Pipeline
-python speech_translate1.py
+   python speech_translate1.py
 
-Translated text outputs are saved in:
-speech_translations.txt
+Translated outputs are saved in:
+   speech_translations.txt
 
+--------------------------------------------------------------------
 
+DATASET & TOKENIZER PIPELINE
 
-
-Dataset & Tokenizer Pipeline
 Dataset Preparation
-
-Cleans, normalizes, merges, shuffles, and splits EN–HI and EN–TE datasets into train, validation, and test sets.
-python merge_all.py
+   python merge_all.py
 
 Tokenizer Training
-Trains a shared SentencePiece BPE tokenizer for English, Hindi, and Telugu.
-python train_tokenizer.py --vocab_size 32000 --model_type bpe
-
+   python train_tokenizer.py --vocab_size 32000 --model_type bpe
 
 Language tokens used:
->>en<<
->>hi<<
->>te<<
+   >>en<<
+   >>hi<<
+   >>te<<
 
+--------------------------------------------------------------------
 
-Sample Output
+SAMPLE OUTPUT
+
 English : hello world
 Hindi   : हैलो दुनिया आप कैसे हैं
 Telugu  : హలో వరల్డ్
 
+--------------------------------------------------------------------
 
+APPLICATIONS
 
+- Real-time speech translation systems
+- Assistive and accessibility tools
+- Multilingual voice interfaces
+- Speech-enabled NLP research
+- Edge-device speech processing
 
-Applications
+--------------------------------------------------------------------
 
-Real-time speech translation systems
-Assistive and accessibility tools
-Multilingual voice interfaces
-Speech-enabled NLP research
-Edge-device speech processing
+CONTRIBUTORS
 
+- Pradyumna Kumar – Speech processing, real-time streaming, translation pipeline
+- Collaborators – Model integration and experimentation
 
+--------------------------------------------------------------------
 
-Contributors
-Pradyumna Kumar – Speech processing, real-time streaming, translation pipeline
-Collaborators – Model integration and experimentation
+LICENSE
 
-
-
-
-License
 This project is intended for academic and research purposes.
+```
