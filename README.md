@@ -35,32 +35,6 @@ Microphone Audio
 
 --------------------------------------------------------------------
 
-REPOSITORY STRUCTURE
-
-.
-├── stt_stream_tiny_auto.py        # Real-time STT using Whisper-tiny (auto-download)
-├── stt_stream_small_auto.py       # Real-time STT using Whisper-small
-├── stt_stream_local.py            # Offline STT using local Whisper model
-├── fast_stream_stt.py             # Faster-Whisper continuous streaming
-├── speech_translate1.py           # Speech → Translation → Hindi TTS pipeline
-│
-├── merge_all.py                   # Dataset cleaning, merging, splitting (EN–HI, EN–TE)
-├── train_tokenizer.py             # SentencePiece tokenizer training (BPE)
-├── Training.ipynb                 # Training & experimentation notebook
-│
-├── tokenizer/
-│   ├── spiece.model               # Trained SentencePiece model
-│   ├── spiece.vocab               # SentencePiece vocabulary
-│   └── special_tokens.txt         # Language & special tokens
-│
-├── outputs/
-│   ├── speech_translations.txt    # Logged speech and translations
-│   ├── hindi_output.mp3           # Sample Hindi TTS output
-│   └── telugu_output.mp3          # Sample Telugu TTS output
-│
-└── README.md
-
---------------------------------------------------------------------
 
 TECHNOLOGIES USED
 
@@ -74,21 +48,6 @@ TECHNOLOGIES USED
 
 --------------------------------------------------------------------
 
-INSTALLATION
-
-1. Create a virtual environment (recommended)
-
-   python -m venv venv
-   source venv/bin/activate        # Linux / macOS
-   venv\Scripts\activate           # Windows
-
-2. Install required packages
-
-   pip install numpy sounddevice faster-whisper transformers sentencepiece gtts huggingface_hub tqdm
-
-Make sure your system microphone is enabled and accessible.
-
---------------------------------------------------------------------
 
 HOW TO RUN
 
@@ -145,8 +104,8 @@ APPLICATIONS
 
 CONTRIBUTORS
 
-- Pradyumna Kumar – Speech processing, real-time streaming, translation pipeline
-- Collaborators – Model integration and experimentation
+- Devagiri Neeraj Babu – Speech processing, real-time streaming, translation pipeline
+- Pradyumna Kumar – Model integration and experimentation
 
 --------------------------------------------------------------------
 
